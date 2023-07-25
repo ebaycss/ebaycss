@@ -2,19 +2,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 20px;
-}
-
 .content img {
     max-width: 500px;
     max-height: 500px;
@@ -22,12 +9,6 @@ body {
     height: auto;
 }
 
-.description {
-    max-width: 100%;
-    text-align: center;
-}
-
-/* Add the eBay.css styles for tabs */
 .tabs {
     position: relative;
     min-height: 200px; /* This part dictates the height of the tabs */
