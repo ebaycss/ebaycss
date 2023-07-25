@@ -1,0 +1,39 @@
+/* Your existing CSS styles */
+
+/* Carousel CSS */
+.carousel-container {
+    width: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-slide {
+    display: flex;
+    width: calc(300px * 5); /* Adjust this value based on the number of images */
+    animation: slide 20s infinite; /* Adjust the animation duration as needed */
+}
+
+.carousel-slide img {
+    width: 300px;
+    height: 200px;
+    margin-right: 10px;
+}
+
+@keyframes slide {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-300px); /* Adjust this value based on image width */
+    }
+    40% {
+        transform: translateX(-600px);
+    }
+    60% {
+        transform: translateX(-900px);
+    }
+    80% {
+        transform: translateX(-1200px);
+    }
+}
