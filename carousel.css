@@ -1,11 +1,9 @@
-/* Your existing CSS styles */
-
 /* Carousel CSS */
 .carousel-container {
     width: 300px;
     overflow: hidden;
     margin: 0 auto;
-    position: relative;
+    float: left; /* Move the carousel to the left */
 }
 
 .carousel-slide {
