@@ -54,3 +54,56 @@ body {
     display: block; /* Show content when corresponding radio button is checked */
     z-index: 1;
 }
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 1s;
+}
+
+.slide {
+    flex: 0 0 100%;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 30px;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Set the initial position of the carousel */
+.carousel {
+    transform: translateX(0);
+}
+
+/* CSS animations to move to the next slide */
+.slide:target ~ .carousel {
+    transform: translateX(-100%);
+}
+
+/* CSS animations to move to the previous slide */
+.slide:target ~ .carousel .slide:last-child {
+    transform: translateX(0);
+}
