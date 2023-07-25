@@ -15,15 +15,15 @@ body {
     margin-top: 20px;
 }
 
-.content img {
+.image {
+    margin-bottom: 20px;
+}
+
+.image img {
     max-width: 300px;
     max-height: 500px;
     width: auto;
     height: auto;
-}
-
-.description {
-    margin-top: 20px;
 }
 
 .description h2 {
