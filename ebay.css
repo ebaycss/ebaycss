@@ -10,22 +10,56 @@ body {
 
 .content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     margin-top: 20px;
 }
 
-.image {
-    margin-bottom: 20px;
-}
-
-.image img {
-    max-width: 300px;
+.content img {
+    max-width: 500px;
     max-height: 500px;
     width: auto;
     height: auto;
 }
 
-.description h2 {
-    margin-top: 0;
+.description {
+    max-width: 100%;
+    text-align: center;
+}
+
+/* Add the eBay.css styles for tabs */
+.tabs {
+    position: relative;
+    min-height: 200px; /* This part dictates the height of the tabs */
+    clear: both;
+    margin: 25px 0;
+}
+
+.tab {
+    float: left;
+}
+
+.tab label {
+    background: #eee;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-left: -1px;
+    position: relative;
+    left: 1px;
+    cursor: pointer;
+}
+
+.tab [type=radio] {
+    display: none;
+}
+
+.tabs [type=radio]:checked ~ label {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    z-index: 2;
+}
+
+.tabs [type=radio]:checked ~ label ~ .content {
+    display: block; /* Show content when corresponding radio button is checked */
+    z-index: 1;
 }
