@@ -2,45 +2,30 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
 .content img {
-    max-width: 500px;
+    max-width: 300px;
     max-height: 500px;
     width: auto;
     height: auto;
 }
 
-.tabs {
-    position: relative;
-    min-height: 200px; /* This part dictates the height of the tabs */
-    clear: both;
-    margin: 25px 0;
+.description {
+    margin-top: 20px;
 }
 
-.tab {
-    float: left;
-}
-
-.tab label {
-    background: #eee;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-left: -1px;
-    position: relative;
-    left: 1px;
-    cursor: pointer;
-}
-
-.tab [type=radio] {
-    display: none;
-}
-
-.tabs [type=radio]:checked ~ label {
-    background: #fff;
-    border-bottom: 1px solid #fff;
-    z-index: 2;
-}
-
-.tabs [type=radio]:checked ~ label ~ .content {
-    display: block; /* Show content when corresponding radio button is checked */
-    z-index: 1;
+.description h2 {
+    margin-top: 0;
 }
