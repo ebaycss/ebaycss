@@ -37,7 +37,7 @@ body {
 
 .nav li {
     display: inline;
-    margin-right: 90px;
+    margin-right: 110px; /* Increase the margin to add more space between list items */
 }
 
 .nav li:last-child {
@@ -137,4 +137,44 @@ body {
 /* Show the content box when checked */
 .tabs input[type="radio"]:checked + label + .tabcontent {
     display: block;
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tabs label {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .tabcontent {
+        width: 100%;
+        position: static;
+        margin-top: 0;
+        border-radius: 0;
+    }
 }
