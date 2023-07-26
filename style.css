@@ -37,7 +37,7 @@ body {
 
 .nav li {
     display: inline;
-    margin-right: 110px; /* Increase the margin to add more space between list items */
+    margin-right: 50px; /* Increase the margin to add more space between list items */
 }
 
 .nav li:last-child {
