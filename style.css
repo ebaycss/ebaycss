@@ -1,180 +1,160 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.wrapper {
-    width: 100%;
-    margin: 0 auto;
+    background:#ffffff;
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    padding: 2px;
     background-color: #252c63;
-}
-
-.logo {
-    margin-right: 20px;
-}
-
-.logo img {
-    width: 300px;
-}
-
-.nav {
-    flex: 1;
-    text-align: center;
-}
-
-.nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav li {
-    display: inline;
-    margin-right: 50px; /* Increase the margin to add more space between list items */
-}
-
-.nav li:last-child {
-    margin-right: 0;
-}
-
-.nav a {
     color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.content {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
     justify-content: space-between;
-    margin-top: 20px;
+    align-items: center;
+    padding: 20px;
+    flex-direction: row; /* Change direction to row */
 }
 
-.image {
-    flex: 1;
-    margin-right: 20px;
+.header img {
+    height: 100px;
+    margin-right: auto; /* Pushes the rest of the items to the right */
 }
 
-.image img {
-    max-width: 100%;
+.header div {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Adjust as needed to center the links */
+}
+
+.header a {
+    color: white;
+    font-size: 20px; /* adjust as needed */
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.main img {
+    max-width: 500px;
     height: auto;
 }
 
-.description-container {
-    flex: 1;
+.main div {
+    width: 60%;
 }
 
-.description {
-    border: 1px solid #ccc;
-    padding: 10px;
+h2{
+  color:#000;
+  text-align:center;
+  font-size:2em;
 }
 
-.description h2 {
-    margin-top: 0;
+.warpper{
+  display:flex;
+  flex-direction: column;
+  align-items: left;
 }
 
-.description p {
-    margin-bottom: 5px;
+.tab{
+  cursor: pointer;
+  padding:20px 180px;
+  margin:0px 0px;
+  background:#252c63;
+  display:inline-block;
+  color:#fff;
+  border-radius:3px 3px 0px 0px;
+  box-shadow: 0 0.5rem 0.8rem #00000080;
 }
 
-.tabs {
-    display: flex;
-    margin-top: 20px;
-    background-color: #252c63;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    overflow: hidden; /* This will hide the line between tabs and content */
-    border-bottom: 3px solid #ffffff; /* Update line color here */
+.panels{
+  background:#fffffff6;
+  box-shadow: 0 2rem 2rem #00000080;
+  min-height:400px;
+  width:100%;
+  max-width:2055px;
+  border-radius:3px;
+  overflow:hidden;
+  padding:20px;  
 }
 
-.tabs .tab {
-    flex: 1;
-    text-align: center;
+.panel{
+  display:none;
+  animation: fadein .8s;
 }
 
-.tabs input[type="radio"] {
-    display: none;
-}
-
-.tabs label {
-    padding: 10px 20px;
-    cursor: pointer;
-    white-space: nowrap;
-    color: white; /* Add this line to set the text color of the tabs */
-    font-size: 22px; /* Slightly reduce the font size to make the text inside the tabs a bit smaller */
-}
-
-/* Style the tab content boxes */
-.tabcontent {
-    display: none;
-    border: 1px solid #ccc;
-    padding: 20px;
-    width: calc(100% - 40px); /* Add this line to set the width of the tab content boxes */
-    position: absolute;
-    margin-top: 10px;
-    border-radius: 0 0 10px 10px;
-    background-color: #f1f1f1; /* Update background color of the tab content */
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-    left: 0;
-    z-index: 1;
-    text-align: left; /* Add text-align: left to align the text to the left */
-}
-
-/* Show the first content box by default */
-.tabs input[type="radio"]:first-child:checked + label + .tabcontent {
-    display: block;
-}
-
-/* Show the content box when checked */
-.tabs input[type="radio"]:checked + label + .tabcontent {
-    display: block;
-}
-
-/* Mobile responsive styles */
-@media screen and (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
+@keyframes fadein {
+    from {
+        opacity:0;
     }
-
-    .logo {
-        margin-right: 0;
-        margin-bottom: 10px;
+    to {
+        opacity:1;
     }
+}
 
-    .nav {
-        flex-direction: column;
-        align-items: center;
-    }
+.panel-title{
+  font-size:1.5em;
+  font-weight:bold
+}
 
-    .nav li {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
+.radio{
+  display:none;
+}
 
-    .tabs {
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel,
+#four:checked ~ .panels #four-panel
+{
+  display:block
+}
+
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab,
+#four:checked ~ .tabs #four-tab
+{
+  background:#fffffff6;
+  color:#000;
+  border-top: 3px solid #000;
+}
+
+@media (max-width: 768px) {
+    .header, .main {
         flex-direction: column;
     }
-
-    .tabs label {
-        padding: 10px;
-        font-size: 18px;
+    .main {
+        flex-direction: column-reverse;
     }
-
-    .tabcontent {
+    .main img {
+        max-width: 100%;
+    }
+    .main div {
         width: 100%;
-        position: static;
-        margin-top: 0;
-        border-radius: 0;
     }
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.shop-links, .newsletter {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-btn {
+    background-color: #252c63;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.copyright {
+    text-align: center;
 }
