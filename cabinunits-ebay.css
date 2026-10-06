@@ -1,0 +1,138 @@
+/* Cabin Units - eBay / Linnworks listing template
+   Colours: change these hex values to match the brand exactly. */
+
+body { margin: 0; }
+
+.cu-wrap {
+  --cu-navy: #14305a;
+  --cu-blue: #1f5fa8;
+  --cu-orange: #f28c1b;
+  --cu-tint: #f3f6fa;
+  --cu-line: #d8e0ea;
+  --cu-text: #1e2833;
+
+  box-sizing: border-box;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 12px 24px;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--cu-text);
+  background: #fff;
+}
+.cu-wrap *, .cu-wrap *::before, .cu-wrap *::after { box-sizing: border-box; }
+.cu-wrap img { display: block; max-width: 100%; height: auto; border: 0; }
+
+/* Header */
+.cu-head {
+  padding: 18px 0 14px;
+  border-bottom: 4px solid var(--cu-orange);
+}
+.cu-logo { width: 220px; max-width: 60%; }
+
+/* Title */
+.cu-title {
+  margin: 22px 0 16px;
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--cu-navy);
+  letter-spacing: -0.01em;
+}
+
+/* Main image */
+.cu-hero {
+  margin: 0 0 28px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid var(--cu-line);
+}
+.cu-hero img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+
+/* Description */
+.cu-section-title {
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--cu-navy);
+  border-bottom: 2px solid var(--cu-orange);
+}
+.cu-desc { margin: 0 0 32px; }
+.cu-desc-body { max-width: 75ch; }
+.cu-desc-body p { margin: 0 0 14px; }
+.cu-desc-body h1,
+.cu-desc-body h2,
+.cu-desc-body h3,
+.cu-desc-body h4 {
+  margin: 22px 0 8px;
+  font-size: 17px;
+  line-height: 1.3;
+  color: var(--cu-navy);
+}
+.cu-desc-body ul,
+.cu-desc-body ol { margin: 0 0 16px; padding-left: 22px; }
+.cu-desc-body li { margin: 0 0 6px; }
+.cu-desc-body li::marker { color: var(--cu-orange); }
+.cu-desc-body a { color: var(--cu-blue); }
+.cu-desc-body table {
+  width: 100%;
+  margin: 0 0 16px;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.cu-desc-body th,
+.cu-desc-body td {
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid var(--cu-line);
+}
+.cu-desc-body th,
+.cu-desc-body tr:first-child td:first-child { background: var(--cu-tint); }
+
+/* Photo grid */
+.cu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 0 0 32px;
+}
+.cu-photo {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--cu-line);
+}
+.cu-photo img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+/* Empty image slots (Linnworks leaves src="" when a product has fewer images) */
+.cu-wrap img[src=""] { display: none; }
+.cu-photo:has(img[src=""]),
+.cu-hero:has(img[src=""]) { display: none; }
+
+/* Footer */
+.cu-foot {
+  padding: 20px 20px 22px;
+  background: var(--cu-navy);
+  border-top: 4px solid var(--cu-orange);
+  color: #fff;
+}
+.cu-foot-name { margin: 0 0 6px; font-size: 18px; font-weight: 700; }
+.cu-foot p { margin: 0; font-size: 15px; color: #dbe6f5; }
+
+/* Wider screens */
+@media (min-width: 700px) {
+  .cu-wrap { padding: 0 20px 32px; }
+  .cu-title { font-size: 32px; }
+  .cu-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+}
